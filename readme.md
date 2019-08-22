@@ -1,7 +1,3 @@
-<font size=24>**[xxxxppp.github.io](xxxxppp.github.io) & [xxxxppp.space](xxxxppp.space)**</font>
-
-
-
 <!DOCTYPE html>
 <html>
 
