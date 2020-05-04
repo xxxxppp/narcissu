@@ -1,116 +1,139 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="renderer" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/font.js"></script>
-    <script src="js/particles.min.js"></script>
-    <title>P-star home</title></head>
-  
-  <body>
-    <div id="container" style="position:absolute; text-align:center; top: 0; z-index: 0; width: 100%; height: 100%;"></div>
-    <script src='js/three.min.js'></script>
-    <script src='js/CopyShader.js'></script>
-    <script src='js/EffectComposer.js'></script>
-    <script src='js/FilmPass.js'></script>
-    <script src='js/FilmShader.js'></script>
-    <script src='js/ShaderPass.js'></script>
-    <script src='js/RenderPass.js'></script>
-    <script src="js/index.js"></script>
-	
-    <div id="wrap" style="position:relative; text-align:center; z-index:1;">
-        
-      <div id="top">
-        <div id="logo">
-          <img class="logo" src="/img/logo.png">
-          <p></p>
-          <div class="type-js headline">
-          	<h1 class="text-js">Hi, Welcome to </br> P-star home</h1>
-          </div>
-          
-          <div id="kg-btn" class="">
-			<input class='tgl tgl-flip' id='qieh' type='checkbox' />
-			<label class='tgl-btn' data-tg-off='ONLINE' data-tg-on='HOME' for='qieh'></label>
-          </div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width: 640px)">
+	<link href="pc.css" rel="stylesheet" type="text/css" media="screen and (min-width: 640px)">
+	<title>P-star home</title>
+</head>
+
+<body>
+
+	<div id="date">
+		<script language=JavaScript>
+			var day;
+if(new Date().getDay()==0) day = "周日"
+if(new Date().getDay()==1) day = "周一"
+if(new Date().getDay()==2) day = "周二"
+if(new Date().getDay()==3) day = "周三"
+if(new Date().getDay()==4) day = "周四"
+if(new Date().getDay()==5) day = "周五"
+if(new Date().getDay()==6) day = "周六"
+document.fgColor = "ffffff";
+date =  day + " " + (new Date().getMonth() + 1 ) + "月" + new Date().getDate() + "日";
+document.write(date);
+		</script>
+	</div>
+
+
+	<form action="http://www.baidu.com/s">
+		<div id="search-div">
+			<input type="text" id="search" name="word" placeholder="Search">
 		</div>
-      </div>
-      
-      </br>
-      
-      <div id="main">
-        <!-- 外网网访问地址 -->
-        <div id="app" class="app animated fadeInLeft">
-          <ul>
-				</li>
-				<li> <a href="http://30550129m2.oicp.vip/" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>共享文件夹</strong>
-				</li>
-				<li> <a href="tags.html" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>书签</strong>
-				</li>
-				<li> <a href="Memorial.html" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>回忆</strong>
-				</li>
-				<li> <a href="cheesebookmark.html" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>小书签</strong>
-				</li>
-				<li> <a href="life.html" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>记录</strong>
-				</li>
-				<li> <a href="http://xxxxppp.ys168.com/" target="_blank">
-				<img class="shake" src="img/png/routeros.png"/>
-				<strong>文件</strong>
-				</li>
-          </ul>
-        </div>
-        
-        <!-- 内网网访问地址 -->
-        <div id="app1" class="app animated fadeInRight">
-          <ul>
-			<li>
-			 <a href="http://192.168.0.1" target="_blank">
-				<img class="shake" src="img/png/routeros.png" />
-				<strong>路由器</strong></a>
-			</li>   
-		  <li>
-			 <a href="https://github.com/xxxxppp/xxxxppp.github.io/" target="_blank">
-				<img class="shake" src="img/png/routeros.png" />
-				<strong>github</strong></a>
-			</li>   
-		  <li>
-			 <a href="https://account.godaddy.com/products/" target="_blank">
-				<img class="shake" src="img/png/routeros.png" />
-				<strong>godaddy</strong></a>
-			</li>   
-		  </li>   
-		  <li>
-			 <a href="https://b.oray.com/" target="_blank">
-				<img class="shake" src="img/png/routeros.png" />
-				<strong>花生壳</strong></a>
-			</li> 
-		    </li>   
-		  <li>
-			 <a href="http://30550l129t.qicp.vip/" target="_blank">
-				<img class="shake" src="img/png/routeros.png" />
-				<strong>桌面</strong></a>
-			</li> 
-		  
-          </ul>
+	</form>
+
+	<div id='tags'>
+		<button type="button" onclick="open1()">网址</button>
+		<button type="button" onclick="open2()">工具</button>
+		<button type="button" onclick="open3()">收藏</button>
+		<button type="button" onclick="open4()">极客</button>
+	</div>
+
+
+	<div id='win1'>
+		<div onclick="close1()" id="close">
+			<A HREF="https://mobile.twitter.com/home ">Twitter</A>
+			<A HREF="https://music.163.com/#/my/m/music/playlist?id=920838516 ">网易云</A>
+			<A HREF="https://www.oneplusbbs.com/forum.php ">一加社区</A>
+			<A HREF="https://www.kdocs.cn/latest ">金山文档</A>
+			<A HREF="https://www.instagram.com/ ">Instagram</A>
+			<A HREF="https://www.google.com. ">Google</A>
+			<A HREF="https://www.icloud.com/iclouddrive/ ">iCloud Drive</A>
+			<A HREF="https://www.ted.com/ ">TED</A>
+			<A HREF="http://m.1000fk.com/ ">Girls美剧小站</A>
+			<A HREF="http://30550l129t.qicp.vip/ ">壳域名1</A>
+			<A HREF="http://30550129m2.oicp.vip/ ">壳域名2</A>
+			<A HREF="https://movie.douban.com/tag/#/?sort=T&range=0,10&tags=%E5%8A%B1%E5%BF%97 ">豆瓣励志榜</A>
+			<A HREF="https://www.zhihu.com/tardis/sogou/art/64482893 ">推荐16个优质的插画、手绘类网站</A>
+			<A HREF="https://www.zhihu.com/tardis/sogou/art/60355291 ">插画设计10大热门网站，再也不要说你没有灵感了！</A>
+			<A HREF="https://topbook.cc/overview ">Topbook | 高效生活视频书</A>
+			<A HREF="https://www.olocat.cn/ ">olocat - 一个有用的科技博客</A>
+			<A HREF="https://wap.hqgq.com/ ">环球钢琴</A>
+			<A HREF="http://xxxxppp.space/ ">xxxxppp.space</A>
+			<A HREF="https://folioart.co.uk/ ">对开插图制作所| 插画家和艺术家作品集</A>
+			<A HREF="http://wefocu.com/ ">微点分享</A>
+			<A HREF="https://pan.appts.cn/ ">软件资源库</A>
+			<A HREF="http://yx.bsh.me/ ">异星软件空间</A>
+
 		</div>
-     
-      </div>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=4014843&auto=1&height=66"></iframe>
-    </div>
- </body>
+	</div>
+
+	<div id='win2'>
+		<div onclick="close2()">
+			<a href="https://cn.bing.com/translator/">微软翻译</a>
+			<A HREF="https://dcc.godaddy.com/domains/domaindetails/XXXXPPP.SPACE/?atc=mya&prog_id=GoDaddy ">Domain Manager</A>
+			<A HREF="https://translate.google.cn/ ">Google 翻译</A>
+			<A HREF="http://192.168.0.107/ ">桌面</A>
+			<A HREF="https://markdown.lovejade.cn/?utm_source=appinn.com ">Arya - 在线 Markdown 编辑器</A>
+			<A HREF="https://www.nma.pub/ ">网易云音乐打卡</A>
+			<A HREF="https://yun.baidu.com/disk/home?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=#/all?path=%2F&vmode=list">百度网盘-全部文件</A>
+			<a href="https://mail.163.com/js6/main.jsp?sid=RDsQTPMGOKTBtYobCbGGFsmqleYFAoZw&df=email163#module=welcome.WelcomeModule%7C%7B%7D">163mail</a>
+		</div>
+	</div>
+	<div id='win3'>
+		<div onclick="close3()">
+			<A HREF="https://u.unipus.cn/user/student?school_id=9442 ">U校园</A>
+			<A HREF="http://i.mooc.chaoxing.com/space/index?t=1582250610918 ">学习通</A>
+			<A HREF="https://space.bilibili.com/286263737/favlist?fid=850211737 ">昂克英文的收藏</A>
+			<A HREF="http://m.kekenet.com/cet4/ ">四级可可英语</A>
+			<A HREF="https://space.bilibili.com/93593746 ">克莱斯考的个人空间 - 哔哩哔哩</A>
+			<A HREF="https://www.runoob.com/html/html-tutorial.html ">HTML 教程 | 菜鸟教程</A>
+			<A HREF="https://www.w3school.com.cn/h.asp ">HTML 系列教程</A>
+			<A HREF="http://xqjy.pxc.jx.cn/ ">萍乡学院学前教育学院</A>
+			<a href="http://www.dicts.cn/">dicts</a>
+			<A HREF="http://www.xiaoyuanshuo.net:55241/jsxsd/framework/xsMain.jsp ">教务系统</A>
+		</div>
+	</div>
+	<div id='win4'>
+		<div onclick="close4()">
+			<A HREF="view-source: ">view-source:查看网页源码</A>
+			<A HREF="http://192.168.0.1/ ">路由器管理</A>
+			<A HREF="http://test-ipv6.com/ ">IPv6 测试</A>
+			<A HREF="https://hsk.oray.com/console/manage/ ">花生壳管理</A>
+			<A HREF="https://b.oray.com/ ">花生壳管理</A>
+			<A HREF="https://chrome.zzzmh.cn/ ">极简插件_Chrome扩展插件商店_优质crx应用</A>
+			<A HREF="http://www.1000wk.com/?from=wechat ">千文库</A>
+			<A HREF="https://www.jianshu.com/p/f86e22eaa2f1 ">域名GitHub建站</A>
+			<A HREF="chrome://flags/ ">chrome://Experiments</A>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		document.getElementById('win1').style.display="none";
+function open1(){document.getElementById('win1').style.display="";document.getElementById('win2').style.display="none";document.getElementById('win3').style.display="none";document.getElementById('win4').style.display="none";}
+function close1(){document.getElementById('win1').style.display="none";}
+	</script>
+
+	<script type="text/javascript">
+		document.getElementById('win2').style.display="none";
+function open2(){document.getElementById('win2').style.display="";document.getElementById('win1').style.display="none";document.getElementById('win3').style.display="none";document.getElementById('win4').style.display="none";}
+function close2(){document.getElementById('win2').style.display="none";}
+	</script>
+
+	<script type="text/javascript">
+		document.getElementById('win3').style.display="none";
+function open3(){document.getElementById('win3').style.display="";document.getElementById('win1').style.display="none";document.getElementById('win2').style.display="none";document.getElementById('win4').style.display="none";}
+function close3(){document.getElementById('win3').style.display="none";}
+	</script>
+
+	<script type="text/javascript">
+		document.getElementById('win4').style.display="none";
+function open4(){document.getElementById('win4').style.display="";document.getElementById('win1').style.display="none";document.getElementById('win2').style.display="none";document.getElementById('win3').style.display="none";}
+function close4(){document.getElementById('win4').style.display="none";}
+	</script>
+</body>
 
 </html>
