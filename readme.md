@@ -1,1 +1,1 @@
-https://narcissu.me/search/
+https://narcissu.me/
